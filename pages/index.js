@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-export default function Home(props) {
+export default function App(props) {
   switch (props.wildcard) {
     case "home":
       return (
@@ -17,21 +17,28 @@ export default function Home(props) {
       break;
     default:
       return (
-        <iframe
-          src={`https://${props.wildcard}.com`}
-          style={{
-            transform: "rotate(180deg)",
-            border: "none",
-            height: "100vh",
-            width: "100%",
-            overflow: "hidden",
-          }}
-          frameBorder="0"
-          scrolling="yes"
-          seamless="seamless"
-          height="100%"
-          width="100%"
-        ></iframe>
+        <>
+          <iframe
+            src={`https://${props.wildcard}.com`}
+            style={{
+              transform: "rotate(180deg)",
+              border: "none",
+              height: "100vh",
+              width: "100%",
+              overflow: "hidden",
+            }}
+            frameBorder="0"
+            scrolling="yes"
+            seamless="seamless"
+            height="100%"
+            width="100%"
+          ></iframe>
+          <style>
+            {`body {
+              margin: 0;
+            }`}
+          </style>
+        </>
       );
   }
 }
